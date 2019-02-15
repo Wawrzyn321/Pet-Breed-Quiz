@@ -1,0 +1,28 @@
+@import '_variables';
+@import '_mixins';
+@import '_animations';
+
+* {
+  font-family: "lato", sans-serif;
+  box-sizing: border-box;
+}
+
+body, html {
+  background-color: $bg-color;
+  color: $text-dark;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+main {
+  position: relative;
+}
+
+header > h1 {
+  text-align: center;
+  font-size: 5em;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px $text-light;
+}

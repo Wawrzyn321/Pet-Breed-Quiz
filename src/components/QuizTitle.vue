@@ -1,0 +1,20 @@
+<template id="quiz-title-template">
+  <h2>Question {{ text }}</h2>
+</template>
+
+<script>
+export default {
+  computed: {
+    text() {
+      return this.questionIndex + 1 + "/" + this.questionsCount;
+    }
+  },
+  props: ["questionIndex", "questionsCount"]
+};
+</script>
+
+<style lang="scss" scoped>
+h2 {
+  text-align: center;
+}
+</style>

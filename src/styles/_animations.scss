@@ -1,0 +1,37 @@
+@keyframes scale-anim {
+	from {
+		transform: scale(0.1, 0.1);
+	}
+	to {
+		transform: scale(1, 1) rotate(0deg);
+	}
+}
+
+@keyframes rotate-anim {
+	0% {
+		transform: rotate(0deg);
+	}
+	10% {
+		transform: rotate(3deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+.fade-leave-active,
+.fade-enter-active {
+  transition: opacity 0.7s;
+}
+
+.fade-enter {
+    opacity: 0;
+}
+  
+.fade-enter-to {
+  opacity: 1;
+}
+
+.fade-leave-to {
+  opacity: 0;
+}

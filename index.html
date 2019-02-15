@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>pet-breed-quiz</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Pet Quiz</h1>
+      </header>
+      <main>
+        <menu-component
+          v-on:quiz-requested="startQuiz($event)"
+          :state='state'
+          :choosen-category='choosenCategory'>
+        </menu-component>
+  
+        <quiz-component 
+          ref='quizComponent'
+          :state='state'
+          v-on:quiz-finished='finishQuiz'
+          v-on:quiz-aborted='finishQuiz'>
+        </quiz-component>
+      </main>
+    </div>
+    <script src="/dist/build.js"></script>
+  </body>
+</html>

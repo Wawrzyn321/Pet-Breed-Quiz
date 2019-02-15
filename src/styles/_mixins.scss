@@ -1,0 +1,11 @@
+@mixin circle($radius) {
+  width: $radius;
+  height: $radius;
+  border-radius: 50%;
+}
+
+//keep border radius here so we don't have to
+//change it separately in '#quiz img' and '.overlay'
+@mixin quiz-image-border {
+  border-radius: 12px;
+}
