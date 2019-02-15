@@ -179,13 +179,13 @@ export default {
 }
 
 .transition-left {
-  left: -$R * 2 !important;
+  left: -0.5 * $R !important;
   opacity: 0;
   transition: all 1s;
 }
 
 .transition-right {
-  left: $R * 3 !important;
+  left: $R * 1.5 !important;
   opacity: 0;
   transition: all 1s;
 }
