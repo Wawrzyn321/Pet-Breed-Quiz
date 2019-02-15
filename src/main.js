@@ -14,7 +14,8 @@ new Vue({
   data: function() {
     return {
       state: AppState.Menu,
-      choosenCategory: Categories.None
+      choosenCategory: Categories.None,
+      title: "Pet Quiz"
     };
   },
   methods: {
