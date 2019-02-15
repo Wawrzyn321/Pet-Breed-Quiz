@@ -13,7 +13,6 @@ export default class BreedListFetcher {
     const endpointUrl = "https://api.thecatapi.com/v1/breeds";
 
     const headers = new Headers();
-    headers.append("x-api-key", "c8501f27-8e89-4982-bbce-f295dd4e1e56");
     const initObject = {
       method: "GET",
       headers: headers
@@ -27,7 +26,6 @@ export default class BreedListFetcher {
     const endpointUrl = "https://dog.ceo/api/breeds/list/all";
 
     const headers = new Headers();
-    // headers.append('x-api-key', 'c8501f27-8e89-4982-bbce-f295dd4e1e56');
     const initObject = {
       method: "GET",
       headers: headers
