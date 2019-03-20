@@ -1,10 +1,12 @@
 import Menu from "@/components/Menu";
 import { shallowMount } from "@vue/test-utils";
-import { Categories } from "@/utility/enums";
+import { Categories, AppState } from "@/utility/enums";
 
 describe("Menu", () => {
   it("emits cat quiz request on clicking on left half", () => {
-    const wrapper = shallowMount(Menu);
+    const wrapper = shallowMount(Menu, {
+      propsData: { state: AppState.Menu }
+    });
 
     wrapper.find(".half.half-left").trigger("click");
 
@@ -14,7 +16,9 @@ describe("Menu", () => {
   });
 
   it("emits dog quiz request on clicking on right half", () => {
-    const wrapper = shallowMount(Menu);
+    const wrapper = shallowMount(Menu, {
+      propsData: { state: AppState.Menu }
+    });
 
     wrapper.find(".half.half-right").trigger("click");
 
@@ -24,7 +28,9 @@ describe("Menu", () => {
   });
 
   it("emits both quiz request on clicking on center", () => {
-    const wrapper = shallowMount(Menu);
+    const wrapper = shallowMount(Menu, {
+      propsData: { state: AppState.Menu }
+    });
 
     wrapper.find(".center-button").trigger("click");
 

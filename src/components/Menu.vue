@@ -72,7 +72,17 @@ export default {
       this.$emit("quiz-requested", Categories.Both);
     }
   },
-  props: ["state", "choosenCategory"]
+  props: {
+    state: {
+      required: true,
+      type: String
+    },
+    choosenCategory: {
+      required: false,
+      type: String,
+      default: Categories.None
+    }
+  }
 };
 </script>
 

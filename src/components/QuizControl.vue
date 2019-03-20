@@ -33,7 +33,22 @@ export default {
       this.$emit("finish-quiz-requested");
     }
   },
-  props: ["state", "quizScore", "questionsCount"]
+  props: {
+    state: {
+      required: true,
+      type: String
+    },
+    quizScore: {
+      required: false,
+      type: Number,
+      default: 0
+    },
+    questionsCount: {
+      required: false,
+      type: Number,
+      default: 0
+    }
+  }
 };
 </script>
 

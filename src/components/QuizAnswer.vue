@@ -21,7 +21,12 @@ export default {
       this.$emit("answer-marked", this.answer);
     }
   },
-  props: ["answer"]
+  props: {
+    answer: {
+      required: true,
+      type: Object
+    }
+  }
 };
 </script>
 

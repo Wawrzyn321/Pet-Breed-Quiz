@@ -137,7 +137,12 @@ export default {
       this.updateImage(currentQuestion, true);
     }
   },
-  props: ["currentQuestion"],
+  props: {
+    currentQuestion: {
+      required: false,
+      type: Object
+    }
+  },
   components: { QuizAnswerComponent }
 };
 </script>

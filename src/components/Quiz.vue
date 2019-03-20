@@ -55,7 +55,7 @@ export default {
   computed: {
     containerClass() {
       return {
-        "non-visible": this.state !== AppState.Quiz
+        "non-visible": this.appState !== AppState.Quiz
       };
     },
     currentQuestion() {
@@ -66,7 +66,6 @@ export default {
       }
     }
   },
-  props: ["state"],
   methods: {
     async initializeQuiz(choosenCategory) {
       try {
@@ -101,15 +100,18 @@ export default {
       const choosenAnswerIndex = this.currentQuestion.answers.findIndex(
         el => el.displayName === answer.displayName
       );
-      
+
       if (choosenAnswerIndex === this.currentQuestion.answerIndex) {
-        this.currentQuestion.answers[choosenAnswerIndex].state = AnswerState.Good;
+        this.currentQuestion.answers[choosenAnswerIndex].state =
+          AnswerState.Good;
         this.score++;
       } else {
-        this.currentQuestion.answers[choosenAnswerIndex].state = AnswerState.Bad;
-        this.currentQuestion.answers[this.currentQuestion.answerIndex].state = AnswerState.Good;
+        this.currentQuestion.answers[choosenAnswerIndex].state =
+          AnswerState.Bad;
+        this.currentQuestion.answers[this.currentQuestion.answerIndex].state =
+          AnswerState.Good;
       }
-      
+
       if (this.currentQuestionIndex === this.questionsCount - 1) {
         this.quizState = QuizState.Finished;
       } else {
@@ -139,6 +141,12 @@ export default {
     QuizTitleComponent,
     QuizQuestionComponent,
     QuizControlComponent
+  },
+  props: {
+    appState: {
+      required: true,
+      type: String
+    }
   }
 };
 </script>

@@ -9,7 +9,17 @@ export default {
       return this.questionIndex + 1 + "/" + this.questionsCount;
     }
   },
-  props: ["questionIndex", "questionsCount"]
+  props: {
+    // zero-based!
+    questionIndex: {
+      required: true,
+      type: Number
+    },
+    questionsCount: {
+      required: true,
+      type: Number
+    }
+  }
 };
 </script>
 

@@ -15,7 +15,9 @@ describe("QuizControl", () => {
     });
 
     it("emits finish quiz request on clicking on finish quiz button", () => {
-      const wrapper = shallowMount(QuizControl);
+      const wrapper = shallowMount(QuizControl, {
+        propsData: { state: QuizState.None }
+      });
 
       wrapper.find("#finish-quiz-button").trigger("click");
 
