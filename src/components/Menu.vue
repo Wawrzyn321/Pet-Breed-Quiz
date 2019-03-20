@@ -55,7 +55,7 @@ export default {
         "transition-right":
           this.state === AppState.Quiz &&
           this.choosenCategory === Categories.Dogs,
-        "transition-bottom":
+        "transition-scale-down":
           this.state === AppState.Quiz &&
           this.choosenCategory === Categories.Both
       };
@@ -201,6 +201,15 @@ export default {
 }
 
 .transition-bottom {
+  top: $R * 1.35 !important;
+  opacity: 0;
+  transition: all 1s !important;
+}
+
+.transition-scale-down {
+  //use width and height, as transform is already taken
+  width: 0px;
+  height: 0px;
   top: $R * 1.3 !important;
   opacity: 0;
   transition: all 1s !important;
