@@ -1,6 +1,7 @@
 import { fetchTimeout } from "../utility/utility";
+import BreedListProvider from "./base/BreedListProvider";
 
-export default class BreedListFetcher {
+export default class BreedListFetcher extends BreedListProvider {
   async fetchData() {
     const apiGuyCatsPromise = this.fetchCatList();
     const ceoCatsPromise = this.fetchDogList();
@@ -19,7 +20,7 @@ export default class BreedListFetcher {
     };
     const response = await fetchTimeout(endpointUrl, initObject, 4000);
     const jsonBreeds = await response.json();
-    return BreedListFetcher.transformCatBreedList(jsonBreeds);
+    return this.transformCatBreedList(jsonBreeds);
   }
 
   async fetchDogList() {
@@ -33,10 +34,10 @@ export default class BreedListFetcher {
 
     const response = await fetchTimeout(endpointUrl, initObject, 4000);
     const json = await response.json();
-    return BreedListFetcher.transformDogBreedList(json.message);
+    return this.transformDogBreedList(json.message);
   }
 
-  static transformCatBreedList(breeds) {
+  transformCatBreedList(breeds) {
     return breeds.map(elem => {
       return {
         displayName: elem.name,
@@ -45,7 +46,7 @@ export default class BreedListFetcher {
     });
   }
 
-  static transformDogBreedList(breeds) {
+  transformDogBreedList(breeds) {
     const transformedData = [];
     for (const breed in breeds) {
       if (breeds[breed].length === 0) {
@@ -62,11 +63,11 @@ export default class BreedListFetcher {
         }
       }
     }
-    return BreedListFetcher.fixDogNames(transformedData);
+    return this.fixDogNames(transformedData);
   }
 
   // add spaces in some dog names, so the don't overflow answer boxes
-  static fixDogNames(breeds) {
+  fixDogNames(breeds) {
     const breedNamesToFix = [
       {
         name: "germanlonghair pointer",

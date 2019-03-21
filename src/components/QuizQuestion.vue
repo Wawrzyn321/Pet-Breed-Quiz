@@ -8,11 +8,7 @@
         @click="requestAnotherImage(currentQuestion)"
       />
 
-      <div
-        class="overlay"
-        :class="overlayClass"
-        :style="overlayStyle"
-      ></div>
+      <div class="overlay" :class="overlayClass" :style="overlayStyle"></div>
 
       <div class="hint" :class="{ 'can-show-hint': !isLoading }">
         Can't make out this breed?
@@ -40,7 +36,6 @@
 
 <script>
 import QuizAnswerComponent from "./QuizAnswer.vue";
-import ImageFetcher from "./../services/ImageFetcher";
 import { isConnectionError } from "./../utility/utility";
 
 export default {
@@ -70,7 +65,7 @@ export default {
       };
     },
     overlayClass() {
-      return { 'overlay-overlaid': this.isLoading };
+      return { "overlay-overlaid": this.isLoading };
     }
   },
   methods: {
@@ -84,8 +79,11 @@ export default {
     },
 
     async updateImage(currentQuestion) {
+      const imageProvider = this.$diProviders.imageProvider;
+
       if (currentQuestion) {
-        const breedLinkName = currentQuestion.answers[currentQuestion.answerIndex].linkName;
+        const breedLinkName =
+          currentQuestion.answers[currentQuestion.answerIndex].linkName;
 
         //load image of new breed, even if image of the previous breed was still loading
         const forceReload = this.previousLinkName !== breedLinkName;
@@ -95,7 +93,7 @@ export default {
           this.previousLinkName = breedLinkName;
 
           try {
-            this.imageUrl = await ImageFetcher.fetchPicture(
+            this.imageUrl = await imageProvider.fetchPicture(
               breedLinkName,
               currentQuestion.type
             );

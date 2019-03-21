@@ -14,7 +14,6 @@
     </style>
   </head>
   <body>
-    <noscript>This page requires JavaScript to work! Please enable it.</noscript>
     <div id="app">
       <header>
         <h1 v-cloak> {{ title }} </h1>
@@ -28,7 +27,7 @@
   
         <quiz-component 
           ref='quizComponent'
-          :state='state'
+          :app-state='state'
           v-on:quiz-finished='finishQuiz'
           v-on:quiz-aborted='finishQuiz'>
         </quiz-component>
