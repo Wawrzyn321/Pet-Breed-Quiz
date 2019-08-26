@@ -1,0 +1,8 @@
+language: generic
+sudo: required
+services: # services required in environment
+  - docker
+
+scripts:
+  - docker build -t wawrzyn321/pet-breed-quiz .
+  - docker images wawrzyn321/pet-breed-quiz
