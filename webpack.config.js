@@ -1,12 +1,13 @@
 var path = require("path");
 var webpack = require("webpack");
+var UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
   entry: ["babel-polyfill", "./src/main.js"],
   output: {
     path: path.resolve(__dirname, ""),
     publicPath: "/",
-    filename: "build.js"
+    filename: "docs/build.js"
   },
   module: {
     rules: [
@@ -81,10 +82,13 @@ if (process.env.NODE_ENV === "production") {
         NODE_ENV: '"production"'
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        warnings: false,
+        ie8: false,
+        output: {
+          comments: false
+        }
       }
     }),
     new webpack.LoaderOptionsPlugin({
