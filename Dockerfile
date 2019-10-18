@@ -14,6 +14,8 @@ RUN npm i
 
 COPY . .
 
+RUN npm run test
+
 # create build
 RUN npm run build
 

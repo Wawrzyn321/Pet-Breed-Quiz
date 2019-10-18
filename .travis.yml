@@ -1,8 +1,14 @@
-language: generic
-sudo: required
+language: node_js
+node_js:
+  - 9
+cache:
+  directories:
+    - node_modules
+
 services: # services required in environment
   - docker
 
 scripts:
+  - npm run test
   - docker build -t wawrzyn321/pet-breed-quiz .
   - docker images wawrzyn321/pet-breed-quiz
