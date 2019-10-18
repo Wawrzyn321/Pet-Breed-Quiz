@@ -2,6 +2,8 @@
 Project done while learning Vue, Jest and Webpack.
 [Project demo](https://wawrzyn321.github.io/Pet-Breed-Quiz/)
 
+[![Build Status](https://travis-ci.org/Wawrzyn321/Pet-Breed-Quiz.svg?branch=master)](https://travis-ci.org/Wawrzyn321/Pet-Breed-Quiz)
+
 # Scripts
 * Run development build with hot module replacing
 ```bash
