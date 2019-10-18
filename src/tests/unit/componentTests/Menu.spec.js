@@ -3,6 +3,14 @@ import { shallowMount } from "@vue/test-utils";
 import { Categories, AppState } from "@/utility/enums";
 
 describe("Menu", () => {
+  it("renders with minimal props", () => {
+    const wrapper = shallowMount(Menu, {
+      propsData: { state: AppState.Menu }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it("emits cat quiz request on clicking on left half", () => {
     const wrapper = shallowMount(Menu, {
       propsData: { state: AppState.Menu }

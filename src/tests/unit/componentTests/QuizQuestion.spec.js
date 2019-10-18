@@ -2,10 +2,19 @@ import QuizQuestion from "@/components/QuizQuestion";
 import { shallowMount, mount } from "@vue/test-utils";
 
 describe("QuizQuestion", () => {
+  const mockQuestion = {
+    answers: [{ answer: 1 }, { answer: 2 }, { answer: 3 }]
+  };
+
+  it("renders with minimal props", () => {
+    const wrapper = shallowMount(QuizQuestion, {
+      propsData: { currentQuestion: mockQuestion }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it("displays answer when is not loading next question", () => {
-    const mockQuestion = {
-      answers: [{ answer: 1 }, { answer: 2 }, { answer: 3 }]
-    };
     const wrapper = shallowMount(QuizQuestion, {
       propsData: { currentQuestion: mockQuestion }
     });
@@ -23,9 +32,6 @@ describe("QuizQuestion", () => {
   });
 
   it("computed answers returns answers value when question is supplied", () => {
-    const mockQuestion = {
-      answers: [{ answer: 1 }, { answer: 2 }, { answer: 3 }]
-    };
     const wrapper = shallowMount(QuizQuestion, {
       propsData: { currentQuestion: mockQuestion }
     });
@@ -55,9 +61,6 @@ describe("QuizQuestion", () => {
   });
 
   it("renders answers when question is supplied", () => {
-    const mockQuestion = {
-      answers: [{ answer: 1 }, { answer: 2 }, { answer: 3 }]
-    };
     const wrapper = mount(QuizQuestion, {
       propsData: { currentQuestion: mockQuestion }
     });

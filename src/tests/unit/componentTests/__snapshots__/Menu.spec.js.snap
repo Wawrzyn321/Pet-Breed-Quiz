@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu renders with minimal props 1`] = `
+<div
+  class="flex-center"
+>
+  <div
+    class="quiz-choice-wrapper"
+  >
+    <div
+      class="half half-left"
+    >
+      <div
+        class="masking-circle"
+      />
+    </div>
+     
+    <div
+      class="half half-right"
+    >
+      <div
+        class="masking-circle"
+      />
+    </div>
+     
+    <div
+      class="center-button"
+    >
+      <p>
+        Why
+        <br />
+        not
+        <br />
+        both?
+      </p>
+    </div>
+  </div>
+</div>
+`;

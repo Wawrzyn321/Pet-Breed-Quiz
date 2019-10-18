@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuizQuestion renders with minimal props 1`] = `
+<div>
+  <div
+    id="image-wrapper"
+  >
+    <img
+      alt="loading quiz image..."
+    />
+     
+    <div
+      class="overlay"
+      style="width: 0px;"
+    />
+     
+    <div
+      class="hint can-show-hint"
+    >
+      
+      Can't make out this breed?
+      
+      <br />
+      
+      Click this image!
+    
+    </div>
+     
+    <!---->
+  </div>
+   
+  <ul>
+    <quiz-answer-component-stub
+      answer="[object Object]"
+    />
+    <quiz-answer-component-stub
+      answer="[object Object]"
+    />
+    <quiz-answer-component-stub
+      answer="[object Object]"
+    />
+  </ul>
+</div>
+`;

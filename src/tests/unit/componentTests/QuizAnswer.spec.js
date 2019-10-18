@@ -3,6 +3,20 @@ import { shallowMount } from "@vue/test-utils";
 import { AnswerState } from "@/utility/enums";
 
 describe("QuizAnswer", () => {
+  it("renders with minimal props", () => {
+    const wrapper = shallowMount(QuizAnswer, {
+      propsData: {
+        answer: {
+          state: AnswerState.None,
+          displayName: "Malamute",
+          linkName: "malamute"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   describe("Applying classes", () => {
     it("should not apply any classes when answer state is none", () => {
       const answer = {

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuizTitle renders with minimal props 1`] = `
+<h2>
+  Question 8/20
+</h2>
+`;

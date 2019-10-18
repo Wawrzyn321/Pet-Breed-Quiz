@@ -3,6 +3,14 @@ import { shallowMount, mount } from "@vue/test-utils";
 import { QuizState, AppState } from "@/utility/enums";
 
 describe("Quiz", () => {
+  it("renders with minimal props", () => {
+    const wrapper = shallowMount(Quiz, {
+      propsData: { appState: AppState.Menu }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it("currentQuestion returns current question when questions are provided", () => {
     const wrapper = shallowMount(Quiz, {
       propsData: { appState: AppState.Quiz }

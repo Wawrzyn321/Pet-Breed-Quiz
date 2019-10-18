@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quiz renders with minimal props 1`] = `
+<div
+  class="non-visible"
+  id="quiz"
+>
+  <div>
+    <quiz-title-component-stub
+      questionindex="-1"
+      questionscount="10"
+    />
+     
+    <quiz-question-component-stub />
+     
+    <quiz-control-component-stub
+      questionscount="10"
+      quizscore="0"
+      state="NONE"
+    />
+  </div>
+</div>
+`;

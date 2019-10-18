@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuizControl Rendering renders in Finished state 1`] = `
+<div>
+  <!---->
+   
+  <!---->
+   
+  <p
+    class="link"
+    id="finish-quiz-button"
+  >
+    
+    Finish quiz
+  
+  </p>
+</div>
+`;
+
+exports[`QuizControl Rendering renders in None state 1`] = `
+<div>
+  <!---->
+   
+  <!---->
+   
+  <p
+    class="link"
+    id="finish-quiz-button"
+  >
+    
+    Finish quiz
+  
+  </p>
+</div>
+`;
+
+exports[`QuizControl Rendering renders in ShowingAnswer state 1`] = `
+<div>
+  <!---->
+   
+  <!---->
+   
+  <p
+    class="link"
+    id="finish-quiz-button"
+  >
+    
+    Finish quiz
+  
+  </p>
+</div>
+`;
+
+exports[`QuizControl Rendering renders in ShowingQuestion state 1`] = `
+<div>
+  <!---->
+   
+  <!---->
+   
+  <p
+    class="link"
+    id="finish-quiz-button"
+  >
+    
+    Finish quiz
+  
+  </p>
+</div>
+`;

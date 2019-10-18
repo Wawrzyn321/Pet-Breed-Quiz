@@ -3,6 +3,18 @@ import { shallowMount } from "@vue/test-utils";
 import { QuizState } from "@/utility/enums";
 
 describe("QuizControl", () => {
+  describe("Rendering", () => {
+    for (const state in QuizState) {
+      it(`renders in ${state} state`, () => {
+        const wrapper = shallowMount(QuizControl, {
+          propsData: { state }
+        });
+
+        expect(wrapper.element).toMatchSnapshot();
+      });
+    }
+  });
+
   describe("Events", () => {
     it("emits next questions request on clicking on next question button", () => {
       const wrapper = shallowMount(QuizControl, {
